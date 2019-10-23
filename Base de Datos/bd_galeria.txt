@@ -1,0 +1,8 @@
+create database galeria;
+use galeria;
+create table fotos(
+	`id_foto` int(11) NOT NULL PRIMARY KEY,
+	`nombre` varchar(25) NOT NULL,
+	`ruta` varchar(50) NOT NULL,
+	`fecha` date NOT NULL
+	);

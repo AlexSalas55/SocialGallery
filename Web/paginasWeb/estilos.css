@@ -1,0 +1,179 @@
+/* ----------------- Porpiedades Generales -----------------*/
+
+body{
+    margin: 0px;
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+header{
+    margin: 0px;
+    background-image:url(./fondos/header.png);
+    background-size: cover;
+}
+
+ul{
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+a {
+    color: #6195FF;
+    text-decoration: none;
+    -webkit-transition: 0.2s opacity;
+    transition: 0.2s opacity;
+}
+a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+    opacity: 0.8;
+    color: #6195FF;
+}
+
+h2{
+    margin: 0px;
+}
+
+svg {
+    height: 45px;
+    left: 0;
+    position: absolute;
+    top: 0; 
+    width: 100%; 
+  }
+
+/* ----------------- Clases -----------------*/
+
+.top{
+    margin: 0px;
+    background-image:url(./fondos/header.png);
+    background-size: cover;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.cabecera{
+    margin-left: 7%;
+    margin-right: 7%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #111;
+}
+
+.fotoLogo{
+    width: 10%;
+}
+
+.titulo{
+    font-size: 1.4vw;
+    font-family: Agency FB;
+    color: #fff;
+    float: right;
+    margin-right: 30%;
+    margin-top: 1.5%;
+}
+
+.barra{
+    background-color: #2C2C2C;
+    padding: 1%;
+}
+
+.boton{
+    color: #000;
+    text-decoration: none;
+    font-family: Arial;
+    color: #fff;
+}
+
+.borderbox{
+    margin-top: 1%;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding: 1%;
+    border: 2px solid #525252;
+    border-top: 2px solid #525252;
+    border-bottom: 2px solid #525252;
+    border-left: 2px solid #525252;
+    border-right: 2px solid #525252;
+    transition: 0.8s!important;
+}
+
+.borderbox:hover{
+    /*background-image:url(./fondos/active.png);*/
+    /*border:0px 0px 2px 0px solid #525252!important;*/
+    border: 0px;
+    border-bottom: 2px solid #525252;
+    transition: 0.8s!important;
+    
+}
+
+.insertar{
+    color: #fff;
+    text-decoration: none;
+    font-family: Agency FB;
+    font-size: 3vw;
+    padding: 10px;
+}
+
+.contenido{
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-right: 50px;
+    padding-left: 150px;
+    display: flex;
+}
+
+.box {
+    width: 30%;
+    margin: 0px;
+}
+
+.texto{
+    width: 30%;
+    color: white;
+    margin: 0px;
+}
+
+.form_nom{
+
+    width: 20%;
+    padding: 15px;
+}
+
+.selec_img{
+    padding: 5px 10px;
+    background: #000;
+    color:#fff;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 5%;
+    transition: 0.2s;
+}
+
+.selec_img:hover{
+
+    background: #121212;
+    border-bottom: 0px solid #fff;
+    border-top: 2px solid #fff;
+}
+
+.send{
+    width: 10%;
+    padding: 1%;
+    font-size: 1vw;
+    transition: 1s;
+}
+
+.send:hover{
+
+    width: 5%;
+    color: #fff;
+    background-color: black;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.imgA{
+    width: 70%;
+}
