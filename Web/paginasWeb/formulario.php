@@ -10,6 +10,11 @@
 </head>
 <body>
 
+	<?php
+		$id_insert=$_GET['id_insert'];
+
+	?>
+
 		<div align="center" class="insertar">
 			<h1>Insertar Foto</h1>
 		</div>
@@ -18,7 +23,7 @@
   <div align="center">
 
 
-  		<form action="formulario.proc.php" method="POST" name="formulario" enctype="multipart/form-data">
+  		<form <?php echo 'action="formulario.proc.php?id_insertar='.$id_insert.'"' ?> method="POST" name="formulario" enctype="multipart/form-data">
 		<br>
 		<!--Campo Nombre-->
 

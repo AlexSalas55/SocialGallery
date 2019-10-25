@@ -5,11 +5,13 @@
     $usuario = "root";
     $contrasena = "903f7hea";
     $servidor = "localhost";
-    $basededatos = "bd_galeria";
+    $basededatos = "gallery";
 
 	// Recibe los datos del formulario y los pasa a una variable 
 
   $CAMPO1 = $_REQUEST['nombre'];
+
+  $id_insertar=$_GET['id_insertar'];
 
   // Comprueba que el archivo no pese demasiado
 
@@ -29,7 +31,7 @@
 
   	// Realiza la consulta de tabla bici de forma descendente sobre id_bici
 
-  $consulta_foto = "SELECT * FROM `fotos`";
+  $consulta_foto = "SELECT * FROM `tbl_gallery`";
 
   $resultado_foto = mysqli_query( $conexion, $consulta_foto ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
@@ -60,20 +62,12 @@
 
   $CAMPO2= basename($_FILES['foto']['name']);
 
-
-  if($_FILES["foto"]["size"]>2000000){
-
-    echo "Solo se permiten archivos menores de 2MB";
-    echo "<a href='Proyecto1galeria.php'>Volver</a>";
-    exit;
-  }
-
   $CAMPO3 = date('Y-m-d');
 
 	// Se insertan los datos con las variables en la base de datos
 
-  $insertar = "INSERT INTO fotos (nombre, ruta, fecha)
-          VALUES ('$CAMPO1', '$CAMPO2', '$CAMPO3')";
+  $insertar = "INSERT INTO tbl_gallery (nombre, ruta, fecha, id_usuario)
+          VALUES ('$CAMPO1', '$CAMPO2', '$CAMPO3', '$id_insertar')";
 
 
     // Se ejecutan todos los inserts en la Base de Datos

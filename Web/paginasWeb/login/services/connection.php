@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect('localhost','root','','imagenes');
+$conn = mysqli_connect('localhost','root','903f7hea','gallery');
 if($conn){
 	echo "Conexión establecida<br>";
 }else{

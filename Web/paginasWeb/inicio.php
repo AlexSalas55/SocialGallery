@@ -16,9 +16,12 @@
 	  $usuario = "root";
 	  $contrasena = "903f7hea";
 	  $servidor = "localhost";
-	  $basededatos = "bd_galeria";
-	  
-	  $consulta_foto = "SELECT * FROM `fotos`";
+	  $basededatos = "gallery";
+
+	  session_start();
+
+	  $nombre_usu= $_SESSION['nombre'];
+
 
 	    // Con estas funciones hace la conexion a la base de datos
 
@@ -26,10 +29,29 @@
 
 	  $db = mysqli_select_db( $conexion, $basededatos ) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
 
+		//Detecta el usuario y busca su id con una simple consulta
+
+	  	
+	  	if(isset($_SESSION['nombre'])){
+			
+		$consulta_id= "SELECT id_usuario FROM `tbl_usuarios` Where nombre='$nombre_usu'";
+		
+		$id_variable_cons = mysqli_query( $conexion, $consulta_id ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+
+		while($row1= mysqli_fetch_array($id_variable_cons)){
+
+		$id_variable= $row1['id_usuario'];
+
+		}
+
+		$consulta_foto = "SELECT * FROM `tbl_gallery` WHERE id_usuario=$id_variable";
+
 	  $resultado_foto = mysqli_query( $conexion, $consulta_foto ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
 
 	  $path= '..\fotosGaleria\_';
+
+	}
 
 	 ?>
 
@@ -46,15 +68,33 @@
       	</div>
 
       	<div class="barra">
+
+      		</div>
     
-      	</div>
+    <?php
+
+    //Mantengo la sesión. Por ende puedo utilizar la variable $_SESSION anteriormente configurada
+		
+		if(isset($_SESSION['nombre'])){
+			echo "<a href='./login/services/logout.proc.php'>Cerrar sesión de ".$_SESSION['nombre']."</a>&nbsp;&nbsp;";
+			
+		
+
+
+
+    ?>
+
+    	<h2 style="color:white;">Sitio personal de <?php echo $_SESSION['nombre']; ?></h2>
+      	
      	<div class="borderbox" align="center">
-      	<a class="insertar" href="formulario.php">
+      	<a class="insertar" <?php echo 'href="formulario.php?id_insert='.$id_variable.'"'?>>
       	Insertar Foto
       	</a>
       	</div>
 
       	<?php 
+
+      	
 
       	$img = 'imgA';
 
@@ -85,6 +125,11 @@
 			<?php
 			      }
 
+			  }else{
+
+			  	echo "<a href='./index.php'>Iniciar Sesion ".$_SESSION['nombre']."</a>;";
+
+			  }
 			        // ------------- Final de la estructura que se repite ----------------
 
 			      // cerrar conexion con MYSQL
