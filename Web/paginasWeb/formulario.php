@@ -6,6 +6,7 @@
 
     	<link rel="stylesheet" type="text/css" href="estilos.css">
         <link rel="icon" type="image/png" href="logo.png">
+        <script type="text/javascript" src="validacion.js"></script>
 
 </head>
 <body>
@@ -22,17 +23,19 @@
 
   <div align="center">
 
+  		<p class="insertar1" id="mensaje"></p>
 
-  		<form <?php echo 'action="formulario.proc.php?id_insertar='.$id_insert.'"' ?> method="POST" name="formulario" enctype="multipart/form-data">
+
+  		<form <?php echo 'action="formulario.proc.php?id_insertar='.$id_insert.'"' ?> onsubmit="return subir()" method="POST" name="formulario" enctype="multipart/form-data">
 		<br>
 		<!--Campo Nombre-->
 
-		<input class="form_nom" type="text" placeholder="Nombre" name="nombre" required="">
+		<input class="form_nom" id="user" type="text" placeholder="Nombre" name="nombre">
 		<br>
 		<br>
 		<br>
 		<!--Campo Archivo-->		
-		<input class="selec_img" type="file" id="foto" name="foto" lang="es" required="">	
+		<input class="selec_img" id="file" type="file" id="foto" name="foto" lang="es">	
 		<br>
 		<!--Boton enviar-->		
 		<input class="send" type="submit" value="Enviar" >

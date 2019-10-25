@@ -76,7 +76,7 @@
     //Mantengo la sesión. Por ende puedo utilizar la variable $_SESSION anteriormente configurada
 		
 		if(isset($_SESSION['nombre'])){
-			echo "<a href='./login/services/logout.proc.php'>Cerrar sesión de ".$_SESSION['nombre']."</a>&nbsp;&nbsp;";
+			echo "<a style=float:right; class=insertar href='./login/services/logout.proc.php'>Cerrar sesión de ".$_SESSION['nombre']."</a>";
 			
 		
 
@@ -84,7 +84,7 @@
 
     ?>
 
-    	<h2 style="color:white;">Sitio personal de <?php echo $_SESSION['nombre']; ?></h2>
+    	<h2 class=insertar style="color:white; ">Sitio personal de <?php echo $_SESSION['nombre']; ?></h2>
       	
      	<div class="borderbox" align="center">
       	<a class="insertar" <?php echo 'href="formulario.php?id_insert='.$id_variable.'"'?>>
@@ -127,7 +127,7 @@
 
 			  }else{
 
-			  	echo "<a href='./index.php'>Iniciar Sesion ".$_SESSION['nombre']."</a>;";
+			  	echo "<div align=center> <a class=insertar href='./index.php'>Iniciar Sesion ".$_SESSION['nombre']."</a> </div>;";
 
 			  }
 			        // ------------- Final de la estructura que se repite ----------------
